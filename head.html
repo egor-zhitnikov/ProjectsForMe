@@ -9,8 +9,36 @@
     <title>Test</title>
 </head>
 <body>
-<form action="index.php" method="post">
-    <input type="text" name="x">
+<script type="text/javascript" >
+    function calculate(form) {
+        var x = form.x;
+        var y = form.y;
+        if(x!='' && y!=''){
+            switch (form.operation){
+                case '+':
+                    alert("Result:",x+y);
+                    break;
+                case '-':
+                    alert("Result:",x-y);
+                    break;
+                case '*':
+                    alert("Result:",x*y);
+                    break;
+                case '/':
+                    alert("Result:",x+y);
+                    break;
+                default:
+                    alert("Incorrect input");
+                    break;
+            }
+        }
+        else{
+            alert("Incorrect input");
+        }
+    }
+</script>
+<form  method="post" onsubmit="calculate()">
+    <input type="number" name="x">
     <select name="operation">
         <option>Chose operation</option>
         <option>+</option>
@@ -18,8 +46,8 @@
         <option>*</option>
         <option>/</option>
     </select>
-    <input type="text" name="y"><br/>
-    <input type="submit">
+    <input type="number" name="y"><br/>
+    <input type="submit"></br>
 
 </form>
 </body>

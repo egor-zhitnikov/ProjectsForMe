@@ -1,6 +1,6 @@
+
 <?php
-require_once ("head.html");
-if($_POST["x"]!=null and $_POST["y"]!=null and $_POST["operation"]!=null) {
+if(!empty($_POST["x"]) && !empty($_POST["y"])){
 
     switch ($_POST["operation"]){
         case '+':
@@ -15,10 +15,13 @@ if($_POST["x"]!=null and $_POST["y"]!=null and $_POST["operation"]!=null) {
         case '/':
             $result=$_POST["x"]/$_POST["y"];
             break;
-
+        default:
+            echo"Incorrect input.";
+            break;
     }
     echo $result;
 } else{
     echo"Incorrect input.";
 }
 ?>
+
